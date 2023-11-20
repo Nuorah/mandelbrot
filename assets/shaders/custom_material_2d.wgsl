@@ -11,7 +11,7 @@
 @fragment
 fn fragment(mesh: VertexOutput) -> @location(0) vec4<f32> {
   let uv = mesh.world_position.xy;
-  let c = (uv - vec2(0.0, 0.0) - vec2(0.5)) * zoom + center;
+  let c = uv  * zoom + center;
   var z = vec2<f32>(0.0, 0.0);
   var i = 0.0f;
   while( z.x * z.x + z.y * z.y < 4.0 && i < epsilon) {
